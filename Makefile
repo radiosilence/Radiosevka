@@ -10,6 +10,9 @@ rm-unhinted:
 nerd: build-ttf
 	docker run --rm -v ./dist/Radiosevka/TTF:/in:Z -v ./dist/Radiosevka/TTFNerd:/out:Z nerdfonts/patcher
 
+uninstall:
+	rm -f ~/Library/Fonts/Radiosevka*
+
 install: nerd
 	cp -vr dist/Radiosevka/TTFNerd/* ~/Library/Fonts
 	cp -vr dist/Radiosevka/TTF/* ~/Library/Fonts
